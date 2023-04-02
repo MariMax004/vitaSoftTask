@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: vitaSoftTask
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:db;Mode=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+  flyway:
+    locations: classpath:db/migration, classpath:db/data
+
+
+server:
+  port: 8082
+  shutdown: graceful
+  servlet:
+    context-path: /api/v1
+
+jwt:
+  jwt-secret: "1#42?!@3321"
+  time-of-action-auth-token: 1
+  time-of-action-access-token: 24
