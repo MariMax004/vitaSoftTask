@@ -53,8 +53,6 @@ public class SpringConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers(HttpMethod.POST, "/api/v1/logout")
                 .permitAll()
-                .antMatchers(HttpMethod.POST, "/applications")
-                .permitAll()
                 .antMatchers(AUTH_WHITELIST)
                 .permitAll()
                 .antMatchers("/h2-console/**")
